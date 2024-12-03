@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda de Ropa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/Header.css">
+  <link rel="stylesheet" href="css/Footer.css">
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+<!-- Header -->
+<header class="header">
+  <div class="logo">
+    <img src="" alt="">
+  </div>
+  <!-- Menú hamburguesa (solo visible en pantallas pequeñas) -->
+  <div class="hamburger" id="hamburger-icon">
+      <i class="fa fa-bars"></i>
+  </div>
+
+  <!-- Barra de navegación -->
+  <nav>
+      <!-- Menú principal (visible en pantallas grandes) -->
+      <ul class="desktop-menu">
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Novedades</a></li>
+          <li><a href="#">Colecciones</a></li>
+          <li><a href="#">Ofertas</a></li>
+      </ul>
+      
+      <!-- Menú móvil (solo visible cuando el menú hamburguesa está activo) -->
+      <ul class="mobile-menu">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Novedades</a></li>
+        <li><a href="#">Colecciones</a></li>
+        <li><a href="#">Ofertas</a></li>
+      </ul>
+  </nav>
+
+  <!-- Íconos de usuario y carrito -->
+  <div class="user-actions">
+      <a href="#" class="cart"><i class="fa fa-shopping-cart"></i></a>
+      <a href="#" class="account">
+          <i class="fa fa-user"></i>
+      </a>
+  </div>
+</header>
+
+
+<!-- Sección Hero -->
+<section class="hero">
+  <div class="video-background">
+    <video autoplay loop muted playsinline>
+      <source src="video/Video2.mp4" type="video/mp4">
+      Tu navegador no soporta la reproducción de videos.
+    </video>
+  </div>
+  <div class="hero-content">
+    <a href="#" class="cta-button">Explorar ahora</a>
+  </div>
+</section>
+
+
+  <!-- Categorías -->
+<section class="categories">
+  <h2>Categorías</h2>
+  <div class="category-list">
+    <div class="category-card">
+      <img src="img/1.jpg" alt="Ropa Casual" class="category-image">
+      <i class="fa fa-tshirt"></i>
+      <h3>Ropa Casual</h3>
+    </div>
+    <div class="category-card">
+      <img src="img/2.jpg" alt="Chaquetas" class="category-image">
+      <i class="fa fa-coat"></i>
+      <h3>Chaquetas</h3>
+    </div>
+    <div class="category-card">
+      <img src="img/3.jpg" alt="Calzado" class="category-image">
+      <i class="fa fa-shoe-prints"></i>
+      <h3>Calzado</h3>
+    </div>
+    <div class="category-card">
+      <img src="img/4.jpg" alt="Accesorios" class="category-image">
+      <i class="fa fa-socks"></i>
+      <h3>Accesorios</h3>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Síguenos -->
+  <section class="follow-us">
+    <p>¡Síguenos para más ofertas y novedades!</p>
+    <div class="social-icons">
+      <a href="#"><i class="fa fa-facebook"></i></a>
+      <a href="#"><i class="fa fa-instagram"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-links">
+      <ul>
+        <li><a href="#">Ayuda</a></li>
+        <li><a href="#">Nosotros</a></li>
+        <li><a href="#">Política de Privacidad</a></li>
+        <li><a href="#">Métodos de pago</a></li>
+      </ul>
+    </div>
+    <div class="footer-social">
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+      <a href="#">Twitter</a>
+    </div>
+  </footer>
+
+  <script src="js/amburguesa.js"></script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-primary);
+    padding: 15px 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* Logo (visible en pantallas grandes) */
+.header .logo {
+    display: flex;
+    align-items: center;
+}
+
+.header .logo img {
+    max-height: 50px;
+}
+
+/* Menú hamburguesa (solo visible en pantallas pequeñas) */
+.hamburger {
+    display: none; /* Oculto en pantallas grandes */
+    cursor: pointer;
+    font-size: 30px;
+    color: var(--color-white);
+    z-index: 2;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Barra de navegación */
+.header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Menú principal (pantallas grandes) */
+.desktop-menu {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.desktop-menu li a {
+    font-size: 18px;
+    color: var(--color-white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.desktop-menu li a:hover {
+    color: #ffe6e0;
+}
+
+/* Menú móvil (solo visible cuando el menú hamburguesa está activo) */
+.mobile-menu {
+    display: none; /* Oculto por defecto */
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-primary);
+    padding: 10px 0;
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.mobile-menu li {
+    margin: 15px 0;
+    text-align: center;
+}
+
+.mobile-menu li a {
+    font-size: 18px;
+    color: var(--color-white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* Mostrar el menú cuando se activa */
+.header.active .mobile-menu {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Íconos de carrito y cuenta */
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user-actions a {
+    text-decoration: none;
+    color: var(--color-white); /* Color de los íconos */
+    font-size: 24px; /* Tamaño de los íconos */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.user-actions a:hover {
+    color: #ffe6e0; /* Color al pasar el mouse */
+    transform: scale(1.1); /* Efecto de escala al pasar el mouse */
+}
+
+.user-actions .cart,
+.user-actions .account {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px; /* Tamaño de los iconos */
+    height: 35px;
+    background-color: var(--color-primary-dark); /* Fondo oscuro para los íconos */
+    border-radius: 50%; /* Redondear los íconos */
+    transition: background-color 0.3s ease;
+}
+
+.user-actions .cart:hover,
+.user-actions .account:hover {
+    background-color: #333333; /* Fondo claro al pasar el mouse */
+}
+
+.user-actions .cart i,
+.user-actions .account i {
+    font-size: 20px; /* Tamaño de los íconos dentro del círculo */
+    color: var(--color-white); /* Color de los íconos dentro del círculo */
+}
+
+/* Ajustar íconos en pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    /* Ocultar logo en pantallas pequeñas */
+    .header .logo {
+        display: none;
+    }
+
+    /* Mostrar menú hamburguesa */
+    .hamburger {
+        display: block;
+    }
+
+    /* Centrar el enlace "Inicio" en el menú móvil */
+    .mobile-menu {
+        justify-content: center;
+    }
+
+    /* Ocultar el menú de navegación principal en pantallas pequeñas */
+    .desktop-menu {
+        display: none;
+    }
+
+    /* Colocar el ícono de hamburguesa en la esquina izquierda en pantallas pequeñas */
+    .header {
+        justify-content: space-between; /* Asegura que el ícono de la hamburguesa esté en la esquina izquierda */
+    }
+
+    /* Ajustar los íconos de carrito y cuenta en pantallas pequeñas */
+    .user-actions {
+        gap: 15px; /* Reducir el espacio entre los íconos en pantallas pequeñas */
+    }
+
+    .user-actions a {
+        font-size: 20px; /* Reducir el tamaño de los íconos */
+    }
+}
+
+/* Estilos para pantallas grandes */
+@media screen and (min-width: 769px) {
+    /* Menú principal visible en pantallas grandes */
+    .desktop-menu {
+        display: flex;
+    }
+
+    /* Ocultar menú hamburguesa en pantallas grandes */
+    .hamburger {
+        display: none;
+    }
+
+    /* Ocultar menú móvil en pantallas grandes */
+    .mobile-menu {
+        display: none;
+    }
+}
