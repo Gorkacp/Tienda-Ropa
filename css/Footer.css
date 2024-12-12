@@ -2,12 +2,12 @@
 .footer {
   background-color: var(--color-footer-bg);
   color: var(--color-white);
-  padding: 40px 20px; /* Aumentamos el padding para que se vea más espacioso */
+  padding: 20px; /* Ajuste del padding para dispositivos más pequeños */
   text-align: center;
   position: relative;
   width: 100%;
   margin-top: auto;
-  border-top: 1px solid var(--color-light-gray); /* Agregamos una línea superior para separar visualmente */
+  border-top: 1px solid var(--color-light-gray);
 }
 
 body {
@@ -22,24 +22,25 @@ body {
   list-style: none;
   display: flex;
   justify-content: center;
-  margin-bottom: 30px;
+  flex-wrap: wrap; /* Permite que los elementos se ajusten en varias filas */
+  margin: 20px 0;
+  padding: 0;
 }
 
 .footer-links ul li {
-  margin-left: 30px;
-  margin-right: 30px; /* Añadimos margen a la derecha para equilibrar */
+  margin: 10px 15px; /* Margen más ajustado en dispositivos pequeños */
 }
 
 .footer-links ul li a {
   color: var(--color-white);
   text-decoration: none;
-  font-size: 1rem; /* Tamaño de fuente moderado */
-  font-weight: 500; /* Un poco más de peso en la fuente */
-  transition: color 0.3s ease; /* Transición suave en hover */
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 .footer-links ul li a:hover {
-  color: #ff6347; /* Color brillante al pasar el mouse */
+  color: #ff6347;
 }
 
 /* Sección Síguenos */
@@ -47,45 +48,76 @@ body {
   text-align: center;
   background-color: var(--color-dark);
   color: var(--color-white);
-  padding: 50px 20px;
-  margin-top: 40px; /* Separación con el footer */
-  border-radius: 8px; /* Bordes redondeados para un toque más suave */
+  padding: 30px 15px; /* Reduce el padding en dispositivos pequeños */
+  margin-top: 20px;
+  border-radius: 8px;
 }
 
 .follow-us p {
-  font-size: 1.3rem; /* Aumentamos el tamaño del texto */
-  margin-bottom: 20px;
-  font-weight: 600; /* Hacemos el texto más destacado */
+  font-size: 1.1rem; /* Tamaño ajustado en pantallas pequeñas */
+  margin-bottom: 15px;
+  font-weight: 600;
 }
 
 /* Redes sociales */
 .social-icons {
   display: flex;
-  justify-content: center; /* Centra los iconos horizontalmente */
-  margin-top: 20px; /* Separación entre texto y los iconos */
+  justify-content: center;
+  flex-wrap: wrap; /* Ajuste para múltiples filas en pantallas pequeñas */
+  margin-top: 15px;
 }
 
 .social-icons a {
-  margin: 0 20px;
+  margin: 10px; /* Reduce el margen en dispositivos pequeños */
   text-decoration: none;
   color: var(--color-white);
-  font-weight: 600;
-  font-size: 2rem; /* Aumentamos el tamaño de los íconos */
+  font-size: 1.8rem; /* Tamaño ajustado para íconos */
   transition: color 0.3s ease;
 }
 
 .social-icons a:hover {
-  color: #ff6347; /* Resaltamos los íconos al hacer hover */
+  color: #ff6347;
 }
 
 /* Estilo adicional para el footer */
 .footer-bottom {
-  margin-top: 30px;
-  font-size: 0.9rem;
+  margin-top: 20px;
+  font-size: 0.8rem; /* Tamaño ajustado en pantallas pequeñas */
   color: var(--color-light-gray);
   text-align: center;
 }
 
 .footer-bottom p {
   margin: 0;
+}
+
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 768px) {
+  .footer-links ul {
+    flex-direction: column; /* Cambia a diseño vertical */
+    align-items: center; /* Centra los elementos */
+  }
+
+  .social-icons a {
+    font-size: 1.5rem; /* Reduce el tamaño de los íconos */
+  }
+
+  .follow-us p {
+    font-size: 1rem; /* Ajuste del texto */
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 15px; /* Reduce el padding en pantallas muy pequeñas */
+  }
+
+  .social-icons a {
+    font-size: 1.3rem; /* Íconos más pequeños para dispositivos muy pequeños */
+    margin: 5px; /* Menor separación entre íconos */
+  }
+
+  .footer-bottom {
+    font-size: 0.7rem; /* Texto más pequeño */
+  }
 }

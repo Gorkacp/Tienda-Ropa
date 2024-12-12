@@ -162,13 +162,18 @@ video {
 /* Sección Síguenos */
 .follow-us {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Dos columnas: una para la imagen y otra para el texto */
-  gap: 10px; /* Espacio entre las columnas */
-  align-items: center; /* Alinea verticalmente los elementos dentro del grid */
+  grid-template-columns: 1fr 1fr; /* Dos columnas */
+  gap: 10px;
+  align-items: center;
   padding: 40px;
   background-image: linear-gradient(to right, var(--color-dark), #8a8787);
   color: var(--color-light);
+  border-radius: 0 !important; /* Asegura esquinas rectas */
+  box-shadow: none; /* Elimina cualquier sombra que pueda causar efecto redondeado */
+  border: none; /* Asegura que no haya bordes visibles */
+  overflow: visible; /* Evita recortes que puedan dar la impresión de esquinas curvas */
 }
+
 
 .follow-image {
   display: flex;
@@ -180,7 +185,6 @@ video {
 .follow-image img {
   max-width: 60%; /* La imagen ocupa todo el ancho de su contenedor */
   height: auto; /* Mantiene la proporción de la imagen */
-  border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra en la imagen */
 }
 
