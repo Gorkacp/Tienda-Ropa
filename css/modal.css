@@ -1,0 +1,124 @@
+/* Estilo del modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro más intenso */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow-y: auto; /* Habilitar desplazamiento si el contenido es demasiado largo */
+}
+
+/* Contenido del modal */
+.modal-content {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px; /* Bordes más redondeados */
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3); /* Sombra más suave y amplia */
+    width: 100%;
+    max-width: 500px; /* Ajuste a un tamaño máximo más grande */
+    position: relative;
+    text-align: center;
+    animation: modalIn 0.3s ease-out; /* Animación para la entrada */
+    box-sizing: border-box; /* Asegurarse de que el padding no afecte el tamaño */
+}
+
+/* Animación de entrada del modal */
+@keyframes modalIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Estilo de la imagen del producto en el modal */
+.modal-product-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: contain;
+    margin: 20px 0;
+}
+
+/* Botón para cerrar el modal */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #f44336; /* Rojo al pasar el mouse */
+}
+
+/* Botón para añadir al carrito */
+.add-to-cart-btn {
+    background-color: #4CAF50; /* Verde para añadir */
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #45a049; /* Sombra más oscura al pasar el mouse */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%; /* Asegurarse de que el modal no sea demasiado grande en pantallas pequeñas */
+        padding: 15px;
+        max-width: 90%; /* Asegurarse de que no se desborde */
+    }
+
+    .close-btn {
+        font-size: 24px;
+    }
+
+    .add-to-cart-btn {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+
+    /* Ajuste en la imagen en dispositivos pequeños */
+    .modal-product-image {
+        max-width: 100%; /* Asegurarse de que la imagen se ajuste bien */
+        height: auto; /* Mantener la proporción de la imagen */
+    }
+}
+
+/* Estilos adicionales para pantallas muy pequeñas (por ejemplo, dispositivos móviles con pantallas más pequeñas que 400px) */
+@media (max-width: 400px) {
+    .modal-content {
+        width: 95%; /* Modal más pequeño en pantallas ultra pequeñas */
+        padding: 10px;
+    }
+
+    .close-btn {
+        font-size: 20px;
+    }
+
+    .add-to-cart-btn {
+        padding: 8px 14px;
+        font-size: 12px;
+    }
+}

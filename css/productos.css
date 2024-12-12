@@ -23,7 +23,7 @@ button {
   border: none;
   cursor: pointer;
   border-radius: 5px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
   margin-top: 20px;
   display: block;
   width: 200px;
@@ -33,7 +33,7 @@ button {
 
 button:hover {
   background-color: #457b9d;
-  transform: scale(1.05); /* Un pequeño aumento al pasar el ratón */
+  transform: scale(1.05);
 }
 
 /* Sección Productos */
@@ -51,13 +51,13 @@ button:hover {
 
 @media (max-width: 768px) {
   #product-list {
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajuste para pantallas más pequeñas */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
 }
 
 @media (max-width: 480px) {
   #product-list {
-      grid-template-columns: 1fr; /* En pantallas muy pequeñas, solo una columna */
+    grid-template-columns: 1fr;
   }
 }
 
@@ -67,9 +67,11 @@ button:hover {
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.4s ease, box-shadow 0.4s ease; /* Hacer más lenta la transición */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: 100%;
   max-width: 280px;
+  display: flex;
+  flex-direction: column;
 }
 
 .product-card:hover {
@@ -80,27 +82,31 @@ button:hover {
 .product-image {
   width: 100%;
   height: 200px;
-  object-fit: contain; /* Asegura que la imagen se ajuste sin ser recortada */
+  object-fit: cover; /* Llena el contenedor sin distorsión */
+  background-color: #f0f0f0;
 }
 
 .product-details {
   padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* Espaciado uniforme entre elementos */
 }
 
 .product-title {
-  font-size: 1.1rem;
-  font-weight: 500;
+  font-size: 1.2rem;
+  font-weight: 600;
   color: #333;
-  margin-bottom: 10px;
   text-align: center;
+  margin: 0;
 }
 
 .product-price {
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1.3rem;
+  font-weight: 700;
   color: #1d3557;
-  text-align: center;
-  margin-bottom: 15px;
+  margin: 0;
 }
 
 .product-card:hover .product-title {
@@ -111,7 +117,7 @@ button:hover {
   color: #1d3557;
 }
 
-/* Estilos del botón Volver */
+/* Botón "Volver" */
 #back-btn {
   background-color: #f1faee;
   color: #333;
@@ -134,23 +140,7 @@ button:hover {
   border-color: #1d3557;
 }
 
-/* Estilo para el contenedor de productos */
+/* Asegura que las tarjetas se vean uniformes */
 #product-list {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5 columnas para mostrar 10 productos en dos filas */
-  gap: 20px;
-  justify-items: center;
-}
-
-/* En pantallas pequeñas, se ajustan a 2 filas */
-@media (max-width: 768px) {
-  #product-list {
-    grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas medianas */
-  }
-}
-
-@media (max-width: 480px) {
-  #product-list {
-    grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
-  }
+  gap: 30px; /* Más espacio entre productos */
 }
