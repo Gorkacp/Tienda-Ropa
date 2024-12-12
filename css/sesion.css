@@ -1,0 +1,127 @@
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+  
+  /* Contenido del modal */
+  .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease;
+  }
+  
+  .modal-content.show {
+    transform: scale(1);
+  }
+  
+  .modal-content.hide {
+    transform: scale(0);
+  }
+  
+  /* Estilo para la X de cierre */
+  .modal-header .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Cambio de color cuando pasa el ratón sobre la X */
+  .modal-header .close:hover {
+    color: #007BFF;
+    transform: scale(1.2); /* Agrandar la X al pasar el ratón */
+  }
+  
+  /* Campos de entrada */
+  input[type="text"], input[type="password"], input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+  }
+  
+  input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus {
+    border-color: #007BFF;
+    outline: none;
+  }
+  
+  /* Botón de registro */
+  button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  button:active {
+    background-color: #004085;
+  }
+  
+  /* Responsividad */
+  @media (max-width: 768px) {
+    .modal-content {
+      width: 80%;
+      padding: 15px;
+    }
+  
+    .modal-header .close {
+      font-size: 25px;
+      top: 5px;
+      right: 5px;
+    }
+  
+    input[type="text"], input[type="password"], input[type="email"] {
+      font-size: 14px;
+    }
+  
+    button {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .modal-content {
+      width: 90%;
+    }
+  
+    .modal-header .close {
+      font-size: 20px;
+      top: 5px;
+      right: 5px;
+    }
+  
+    button {
+      font-size: 12px;
+    }
+  }
+  

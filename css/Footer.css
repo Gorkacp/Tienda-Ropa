@@ -1,60 +1,91 @@
 /* Footer */
 .footer {
-    background-color: var(--color-footer-bg);
-    color: var(--color-white);
-    padding: 30px;
-    text-align: center;
-  }
-  
-  .footer-links ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-  
-  .footer-links ul li {
-    margin-left: 20px;
-  }
-  
-  .footer-links ul li a {
-    color: var(--color-white);
-    text-decoration: none;
-  }
-  
-  .footer-links ul li a:hover {
-    color: #ff6347;
-  }
-  
-  .footer-social {
-    margin-top: 20px;
-  }
-  
-  .footer-social a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: var(--color-white);
-    font-weight: 600;
-  }
-  
-  /* Sección Síguenos */
-  .follow-us {
-    text-align: center;
-    background-color: var(--color-dark);
-    color: var(--color-white);
-    padding: 40px;
-  }
-  
-  .follow-us p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-  }
-  
-  .social-icons a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: var(--color-white);
-    font-weight: 600;
-    font-size: 1.5rem;
-  }
-  
+  background-color: var(--color-footer-bg);
+  color: var(--color-white);
+  padding: 40px 20px; /* Aumentamos el padding para que se vea más espacioso */
+  text-align: center;
+  position: relative;
+  width: 100%;
+  margin-top: auto;
+  border-top: 1px solid var(--color-light-gray); /* Agregamos una línea superior para separar visualmente */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Estilo de los enlaces en el footer */
+.footer-links ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.footer-links ul li {
+  margin-left: 30px;
+  margin-right: 30px; /* Añadimos margen a la derecha para equilibrar */
+}
+
+.footer-links ul li a {
+  color: var(--color-white);
+  text-decoration: none;
+  font-size: 1rem; /* Tamaño de fuente moderado */
+  font-weight: 500; /* Un poco más de peso en la fuente */
+  transition: color 0.3s ease; /* Transición suave en hover */
+}
+
+.footer-links ul li a:hover {
+  color: #ff6347; /* Color brillante al pasar el mouse */
+}
+
+/* Sección Síguenos */
+.follow-us {
+  text-align: center;
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  padding: 50px 20px;
+  margin-top: 40px; /* Separación con el footer */
+  border-radius: 8px; /* Bordes redondeados para un toque más suave */
+}
+
+.follow-us p {
+  font-size: 1.3rem; /* Aumentamos el tamaño del texto */
+  margin-bottom: 20px;
+  font-weight: 600; /* Hacemos el texto más destacado */
+}
+
+/* Redes sociales */
+.social-icons {
+  display: flex;
+  justify-content: center; /* Centra los iconos horizontalmente */
+  margin-top: 20px; /* Separación entre texto y los iconos */
+}
+
+.social-icons a {
+  margin: 0 20px;
+  text-decoration: none;
+  color: var(--color-white);
+  font-weight: 600;
+  font-size: 2rem; /* Aumentamos el tamaño de los íconos */
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #ff6347; /* Resaltamos los íconos al hacer hover */
+}
+
+/* Estilo adicional para el footer */
+.footer-bottom {
+  margin-top: 30px;
+  font-size: 0.9rem;
+  color: var(--color-light-gray);
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+}

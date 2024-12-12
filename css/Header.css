@@ -96,6 +96,11 @@
     display: flex;
     align-items: center;
     gap: 20px;
+    position: absolute; /* Asegura que los iconos permanezcan en su lugar */
+    right: 30px; /* Ajusta la distancia desde el borde derecho */
+    top: 50%; /* Centra verticalmente */
+    transform: translateY(-50%); /* Alineación vertical */
+    z-index: 2; /* Asegura que los iconos estén por encima de otros elementos */
 }
 
 .user-actions a {
@@ -163,6 +168,7 @@
     /* Ajustar los íconos de carrito y cuenta en pantallas pequeñas */
     .user-actions {
         gap: 15px; /* Reducir el espacio entre los íconos en pantallas pequeñas */
+        right: 15px; /* Ajustar el espacio en la parte derecha */
     }
 
     .user-actions a {

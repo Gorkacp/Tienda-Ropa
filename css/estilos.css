@@ -11,7 +11,7 @@
   --color-dark: #333333; /* Color oscuro */
   --color-light: #F4F4F4; /* Color de fondo */
   --color-white: #ffffff;
-  --color-footer-bg: #2C2C2C; /* Fondo de pie de página */
+  --color-footer-bg: #0f0f0e; /* Fondo de pie de página */
   --font-family: 'Poppins', sans-serif;
 }
 
@@ -106,16 +106,21 @@ video {
   background-color: var(--color-white);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  padding: 20px;
-  text-align: center;
+  overflow: hidden; /* Evita que el contenido se desborde */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .category-card img {
-  width: 100%; /* Hace que la imagen ocupe todo el ancho del contenedor */
-  height: auto; /* Mantiene la proporción original de la imagen */
-  border-radius: 8px;
-  margin-bottom: 15px; /* Espacio entre la imagen y el título */
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Mantiene la imagen proporcional */
+}
+
+.category-card .text-content {
+  padding: 15px;
+  text-align: center;
 }
 
 .category-card i {
@@ -154,23 +159,76 @@ video {
   }
 }
 
-/* Síguenos */
+/* Sección Síguenos */
 .follow-us {
-  text-align: center;
-  background-color: var(--color-dark);
-  color: var(--color-light);
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Dos columnas: una para la imagen y otra para el texto */
+  gap: 10px; /* Espacio entre las columnas */
+  align-items: center; /* Alinea verticalmente los elementos dentro del grid */
   padding: 40px;
+  background-image: linear-gradient(to right, var(--color-dark), #8a8787);
+  color: var(--color-light);
 }
 
-.follow-us p {
-  font-size: 1.2rem;
+.follow-image {
+  display: flex;
+  justify-content: center; /* Centra la imagen en su columna */
+  align-items: center; /* Alinea la imagen verticalmente en el centro */
+  height: 100%; /* Asegura que la imagen se alinee verticalmente con el texto */
+}
+
+.follow-image img {
+  max-width: 60%; /* La imagen ocupa todo el ancho de su contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra en la imagen */
+}
+
+.follow-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Alinea el texto a la derecha */
+  text-align: center; /* El texto se alinea a la derecha dentro del contenedor */
+}
+
+.follow-text p {
+  font-size: 1.5rem;
   margin-bottom: 20px;
 }
 
-.social-icons a {
-  margin: 0 15px;
-  text-decoration: none;
-  color: var(--color-white);
-  font-weight: 600;
-  font-size: 1.5rem;
+.social-icons {
+  display: flex;
+  gap: 15px;
 }
+
+.social-icons a {
+  font-size: 2rem; /* Tamaño de los iconos */
+  color: var(--color-light);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+  color: #4CAF50;
+}
+
+/* Media Queries para dispositivos pequeños */
+@media (max-width: 768px) {
+  .follow-us {
+    grid-template-columns: 1fr; /* En pantallas pequeñas, apilar los elementos en una sola columna */
+    text-align: center; /* Centra el texto en pantallas pequeñas */
+  }
+
+  .follow-image {
+    margin-bottom: 20px; /* Añade espacio entre la imagen y el texto */
+  }
+
+  .follow-text {
+    align-items: center; /* Centra el texto en pantallas pequeñas */
+    text-align: center; /* Centra el texto */
+  }
+}
+
+
+
+
