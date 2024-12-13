@@ -9,7 +9,7 @@
 :root {
   --color-primary: #0f0f0e; /* Color principal */
   --color-dark: #333333; /* Color oscuro */
-  --color-light: #F4F4F4; /* Color de fondo */
+  --color-light: #f4f4f4; /* Color de fondo */
   --color-white: #ffffff;
   --color-footer-bg: #0f0f0e; /* Fondo de pie de página */
   --font-family: 'Poppins', sans-serif;
@@ -25,14 +25,13 @@ body {
 /* Sección Hero */
 .hero {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 600px;
+  display: grid;
+  place-items: center;
+  height: 37.5rem; /* 600px */
   color: var(--color-white);
   text-align: center;
-  padding: 50px;
-  padding-top: 400px; /* Añade más espacio arriba */
+  padding: 3.125rem; /* 50px */
+  padding-top: 25rem; /* 400px */
   background: none;
 }
 
@@ -49,32 +48,32 @@ video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 1; /* Asegura que no haya opacidad */
-  background: none; /* Elimina cualquier fondo de color en el video */
+  opacity: 1;
+  background: none;
 }
 
 /* Texto y contenido sobre el video */
 .hero-content h1 {
   font-size: 3rem;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem; /* 20px */
   font-weight: 700;
 }
 
 .hero-content p {
   font-size: 1.5rem;
-  margin-bottom: 30px;
+  margin-bottom: 1.875rem; /* 30px */
 }
 
 /* Botón de llamada a la acción */
 .hero .cta-button {
-  padding: 12px 30px;
+  padding: 0.75rem 1.875rem; /* 12px 30px */
   background-color: var(--color-primary);
   color: var(--color-white);
   font-weight: 600;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 0.3125rem; /* 5px */
   transition: background-color 0.3s ease;
-  margin-top: 40px; 
+  margin-top: 2.5rem; /* 40px */
 }
 
 .hero .cta-button:hover {
@@ -83,155 +82,124 @@ video {
 
 /* Categorías */
 .categories {
-  padding: 60px 30px;
+  padding: 3.75rem 1.875rem; /* 60px 30px */
   text-align: center;
   background-color: #fafafa;
+  display: grid;
+  gap: 2.5rem; /* 40px */
 }
 
 .categories h2 {
   font-size: 2.5rem;
-  margin-bottom: 40px;
   color: var(--color-dark);
 }
 
 .category-list {
-  display: flex;
-  justify-content: space-around;
-  gap: 20px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14.0625rem, 1fr)); /* min 225px */
+  gap: 1.25rem; /* 20px */
 }
 
 .category-card {
-  width: 23%;
   background-color: var(--color-white);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  overflow: hidden; /* Evita que el contenido se desborde */
+  box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.1); /* 0 4px 10px */
+  border-radius: 0.625rem; /* 10px */
+  overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: auto 1fr;
 }
 
 .category-card img {
   width: 100%;
   height: auto;
-  object-fit: cover; /* Mantiene la imagen proporcional */
+  object-fit: cover;
 }
 
 .category-card .text-content {
-  padding: 15px;
+  padding: 0.9375rem; /* 15px */
   text-align: center;
 }
 
 .category-card i {
   font-size: 3rem;
   color: var(--color-primary);
-  margin-bottom: 15px;
+  margin-bottom: 0.9375rem; /* 15px */
 }
 
 .category-card h3 {
-  margin-top: 15px;
+  margin-top: 0.9375rem; /* 15px */
   font-size: 1.5rem;
   color: var(--color-dark);
 }
 
 .category-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-0.625rem); /* -10px */
+  box-shadow: 0 0.375rem 0.9375rem rgba(0, 0, 0, 0.1); /* 0 6px 15px */
 }
 
-/* Media Queries para hacer la sección responsiva */
-@media (max-width: 1200px) {
-  .category-card {
-    width: 30%;
-  }
-}
-
+/* Media Queries */
 @media (max-width: 768px) {
-  .category-card {
-    width: 45%;
-  }
-}
-
-@media (max-width: 480px) {
-  .category-card {
-    width: 100%;
+  .categories {
+    padding: 2.5rem 1.25rem; /* 40px 20px */
   }
 }
 
 /* Sección Síguenos */
 .follow-us {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Dos columnas */
-  gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.625rem; /* 10px */
   align-items: center;
-  padding: 40px;
+  padding: 2.5rem; /* 40px */
   background-image: linear-gradient(to right, var(--color-dark), #8a8787);
   color: var(--color-light);
-  border-radius: 0 !important; /* Asegura esquinas rectas */
-  box-shadow: none; /* Elimina cualquier sombra que pueda causar efecto redondeado */
-  border: none; /* Asegura que no haya bordes visibles */
-  overflow: visible; /* Evita recortes que puedan dar la impresión de esquinas curvas */
 }
 
-
 .follow-image {
-  display: flex;
-  justify-content: center; /* Centra la imagen en su columna */
-  align-items: center; /* Alinea la imagen verticalmente en el centro */
-  height: 100%; /* Asegura que la imagen se alinee verticalmente con el texto */
+  display: grid;
+  place-items: center;
 }
 
 .follow-image img {
-  max-width: 60%; /* La imagen ocupa todo el ancho de su contenedor */
-  height: auto; /* Mantiene la proporción de la imagen */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra en la imagen */
+  max-width: 60%;
+  height: auto;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* 0 4px 8px */
 }
 
 .follow-text {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Alinea el texto a la derecha */
-  text-align: center; /* El texto se alinea a la derecha dentro del contenedor */
+  display: grid;
+  gap: 1.25rem; /* 20px */
+  text-align: center;
 }
 
 .follow-text p {
   font-size: 1.5rem;
-  margin-bottom: 20px;
 }
 
 .social-icons {
-  display: flex;
-  gap: 15px;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 0.9375rem; /* 15px */
 }
 
 .social-icons a {
-  font-size: 2rem; /* Tamaño de los iconos */
+  font-size: 2rem;
   color: var(--color-light);
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .social-icons a:hover {
   transform: scale(1.2);
-  color: #4CAF50;
+  color: #4caf50;
 }
 
-/* Media Queries para dispositivos pequeños */
 @media (max-width: 768px) {
   .follow-us {
-    grid-template-columns: 1fr; /* En pantallas pequeñas, apilar los elementos en una sola columna */
-    text-align: center; /* Centra el texto en pantallas pequeñas */
-  }
-
-  .follow-image {
-    margin-bottom: 20px; /* Añade espacio entre la imagen y el texto */
-  }
-
-  .follow-text {
-    align-items: center; /* Centra el texto en pantallas pequeñas */
-    text-align: center; /* Centra el texto */
+    grid-template-columns: 1fr;
   }
 }
+
 
 
 

@@ -154,18 +154,23 @@ function mostrarModalProducto(product) {
             <span class="close-btn">&times;</span>
             <h2>${product.title}</h2>
             <p><strong>Precio:</strong> <span style="font-size: 1.5em; font-weight: bold; color: #FF5733;">${product.price} €</span></p>
-            <div class="image-carousel">
-                ${product.images.map((image, index) => `
-                    <img src="${image}" alt="Imagen ${index + 1}" class="carousel-image" style="display: ${index === 0 ? 'block' : 'none'};">
-                `).join('')}
-                <button class="prev-image-btn">&#10094;</button>
-                <button class="next-image-btn">&#10095;</button>
+            
+            <div class="modal-body">
+                <div class="image-carousel">
+                    ${product.images.map((image, index) => `
+                        <img src="${image}" alt="Imagen ${index + 1}" class="carousel-image" style="display: ${index === 0 ? 'block' : 'none'};">
+                    `).join('')}
+                    <button class="prev-image-btn">&#10094;</button>
+                    <button class="next-image-btn">&#10095;</button>
+                </div>
+
+                <div class="modal-description-container">
+                    <p class="modal-description">${product.description}</p>
+                    <button class="add-to-cart-btn">Añadir a la cesta</button>
+                </div>
             </div>
-            <p class="modal-description">${product.description}</p>
-            <button class="add-to-cart-btn">Añadir a la cesta</button>
         </div>
     `;
-
     // Añadir el modal al cuerpo
     document.body.appendChild(modal);
 

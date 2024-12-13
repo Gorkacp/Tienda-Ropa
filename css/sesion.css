@@ -1,127 +1,146 @@
 /* Modal */
 .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-  }
-  
-  /* Contenido del modal */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  font-family: 'Roboto', sans-serif; /* Fuente profesional */
+}
+
+/* Contenido del modal */
+.modal-content {
+  background-color: #fff;
+  padding: 2rem; /* 32px */
+  border-radius: 1rem; /* 16px */
+  max-width: 36rem; /* 576px */
+  width: 90%;
+  box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.2);
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease;
+  font-size: 1rem; /* 16px */
+  line-height: 1.5;
+}
+
+.modal-content.show {
+  transform: scale(1);
+}
+
+.modal-content.hide {
+  transform: scale(0);
+}
+
+/* Estilo para la X de cierre */
+.modal-header .close {
+  position: absolute;
+  top: 1rem; /* 16px */
+  right: 1rem; /* 16px */
+  font-size: 2rem; /* 32px */
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.modal-header .close:hover {
+  color: #FF6347; /* Color más atractivo */
+  transform: scale(1.2); /* Agrandar la X al pasar el ratón */
+}
+
+/* Campos de entrada */
+input[type="text"], input[type="password"], input[type="email"] {
+  width: 100%;
+  padding: 1rem; /* 16px */
+  margin-bottom: 1.25rem; /* 20px */
+  border: 0.125rem solid #ddd; /* 2px */
+  border-radius: 0.5rem; /* 8px */
+  font-size: 1rem; /* 16px */
+  color: #333;
+  background-color: #f9f9f9; /* Fondo suave */
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus {
+  border-color: #007BFF;
+  outline: none;
+  background-color: #fff; /* Cambiar el fondo al enfocar */
+}
+
+/* Botón de registro */
+button {
+  width: 100%;
+  padding: 1.125rem; /* 18px */
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 0.5rem; /* 8px */
+  font-size: 1rem; /* 16px */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:active {
+  background-color: #004085;
+  transform: scale(0.98); /* Efecto de presionar */
+}
+
+/* Estilo del texto dentro del modal */
+h2 {
+  font-size: 1.5rem; /* 24px */
+  margin-bottom: 1.5rem; /* 24px */
+  font-weight: 500;
+  color: #333;
+}
+
+p {
+  font-size: 0.875rem; /* 14px */
+  color: #777;
+  margin-bottom: 1.5rem;
+}
+
+/* Responsividad */
+@media (max-width: 48rem) { /* 768px */
   .modal-content {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 500px;
-    width: 90%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    position: relative;
-    transition: transform 0.3s ease;
+    width: 80%;
+    padding: 1.5rem; /* 24px */
   }
-  
-  .modal-content.show {
-    transform: scale(1);
-  }
-  
-  .modal-content.hide {
-    transform: scale(0);
-  }
-  
-  /* Estilo para la X de cierre */
+
   .modal-header .close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 30px;
-    color: #333;
-    cursor: pointer;
-    transition: color 0.3s ease, transform 0.3s ease;
+    font-size: 1.75rem; /* 28px */
+    top: 0.75rem; /* 12px */
+    right: 0.75rem; /* 12px */
   }
-  
-  /* Cambio de color cuando pasa el ratón sobre la X */
-  .modal-header .close:hover {
-    color: #007BFF;
-    transform: scale(1.2); /* Agrandar la X al pasar el ratón */
-  }
-  
-  /* Campos de entrada */
+
   input[type="text"], input[type="password"], input[type="email"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 2px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: border-color 0.3s ease;
+    font-size: 1rem; /* 16px */
   }
-  
-  input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus {
-    border-color: #007BFF;
-    outline: none;
-  }
-  
-  /* Botón de registro */
+
   button {
-    width: 100%;
-    padding: 12px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 1rem; /* 16px */
   }
-  
-  button:hover {
-    background-color: #0056b3;
+}
+
+@media (max-width: 30rem) { /* 480px */
+  .modal-content {
+    width: 90%;
   }
-  
-  button:active {
-    background-color: #004085;
+
+  .modal-header .close {
+    font-size: 1.5rem; /* 24px */
+    top: 0.5rem; /* 8px */
+    right: 0.5rem; /* 8px */
   }
-  
-  /* Responsividad */
-  @media (max-width: 768px) {
-    .modal-content {
-      width: 80%;
-      padding: 15px;
-    }
-  
-    .modal-header .close {
-      font-size: 25px;
-      top: 5px;
-      right: 5px;
-    }
-  
-    input[type="text"], input[type="password"], input[type="email"] {
-      font-size: 14px;
-    }
-  
-    button {
-      font-size: 14px;
-    }
+
+  button {
+    font-size: 0.875rem; /* 14px */
   }
-  
-  @media (max-width: 480px) {
-    .modal-content {
-      width: 90%;
-    }
-  
-    .modal-header .close {
-      font-size: 20px;
-      top: 5px;
-      right: 5px;
-    }
-  
-    button {
-      font-size: 12px;
-    }
-  }
-  
+}

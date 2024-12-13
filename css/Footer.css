@@ -2,12 +2,12 @@
 .footer {
   background-color: var(--color-footer-bg);
   color: var(--color-white);
-  padding: 20px; /* Ajuste del padding para dispositivos más pequeños */
+  padding: 1.25rem; /* Ajuste del padding para dispositivos más pequeños */
   text-align: center;
   position: relative;
   width: 100%;
   margin-top: auto;
-  border-top: 1px solid var(--color-light-gray);
+  border-top: 0.0625rem solid var(--color-light-gray);
 }
 
 body {
@@ -23,12 +23,12 @@ body {
   display: flex;
   justify-content: center;
   flex-wrap: wrap; /* Permite que los elementos se ajusten en varias filas */
-  margin: 20px 0;
+  margin: 1.25rem 0;
   padding: 0;
 }
 
 .footer-links ul li {
-  margin: 10px 15px; /* Margen más ajustado en dispositivos pequeños */
+  margin: 0.625rem 0.9375rem; /* Margen más ajustado en dispositivos pequeños */
 }
 
 .footer-links ul li a {
@@ -48,14 +48,14 @@ body {
   text-align: center;
   background-color: var(--color-dark);
   color: var(--color-white);
-  padding: 30px 15px; /* Reduce el padding en dispositivos pequeños */
-  margin-top: 20px;
-  border-radius: 8px;
+  padding: 1.875rem 0.9375rem; /* Reduce el padding en dispositivos pequeños */
+  margin-top: 1.25rem;
+  border-radius: 0.5rem;
 }
 
 .follow-us p {
   font-size: 1.1rem; /* Tamaño ajustado en pantallas pequeñas */
-  margin-bottom: 15px;
+  margin-bottom: 0.9375rem;
   font-weight: 600;
 }
 
@@ -64,14 +64,14 @@ body {
   display: flex;
   justify-content: center;
   flex-wrap: wrap; /* Ajuste para múltiples filas en pantallas pequeñas */
-  margin-top: 15px;
+  margin-top: 0.9375rem;
 }
 
 .social-icons a {
-  margin: 10px; /* Reduce el margen en dispositivos pequeños */
+  margin: 0.625rem; /* Reduce el margen en dispositivos pequeños */
   text-decoration: none;
   color: var(--color-white);
-  font-size: 1.8rem; /* Tamaño ajustado para íconos */
+  font-size: 1.125rem; /* Tamaño ajustado para íconos */
   transition: color 0.3s ease;
 }
 
@@ -81,7 +81,7 @@ body {
 
 /* Estilo adicional para el footer */
 .footer-bottom {
-  margin-top: 20px;
+  margin-top: 1.25rem;
   font-size: 0.8rem; /* Tamaño ajustado en pantallas pequeñas */
   color: var(--color-light-gray);
   text-align: center;
@@ -92,14 +92,14 @@ body {
 }
 
 /* Media Queries para pantallas pequeñas */
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
   .footer-links ul {
     flex-direction: column; /* Cambia a diseño vertical */
     align-items: center; /* Centra los elementos */
   }
 
   .social-icons a {
-    font-size: 1.5rem; /* Reduce el tamaño de los íconos */
+    font-size: 1.125rem; /* Reduce el tamaño de los íconos */
   }
 
   .follow-us p {
@@ -107,17 +107,17 @@ body {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 30rem) {
   .footer {
-    padding: 15px; /* Reduce el padding en pantallas muy pequeñas */
+    padding: 0.9375rem; /* Reduce el padding en pantallas muy pequeñas */
   }
 
   .social-icons a {
-    font-size: 1.3rem; /* Íconos más pequeños para dispositivos muy pequeños */
-    margin: 5px; /* Menor separación entre íconos */
+    font-size: 1.0625rem; /* Íconos más pequeños para dispositivos muy pequeños */
+    margin: 0.3125rem; /* Menor separación entre íconos */
   }
 
   .footer-bottom {
-    font-size: 0.7rem; /* Texto más pequeño */
+    font-size: 0.4375rem; /* Texto más pequeño */
   }
 }

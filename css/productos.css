@@ -8,25 +8,25 @@ body {
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 2rem; /* 32px */
   font-weight: 600;
   color: #0f0f0e;
-  margin-bottom: 1rem;
+  margin-bottom: 1rem; /* 16px */
   text-align: center;
 }
 
 button {
   background-color: #0f0f0e;
   color: white;
-  padding: 10px 20px;
-  font-size: 1rem;
+  padding: 0.625rem 1.25rem; /* 10px 20px */
+  font-size: 1rem; /* 16px */
   border: none;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 0.3125rem; /* 5px */
   transition: background-color 0.3s ease, transform 0.3s ease;
-  margin-top: 20px;
+  margin-top: 1.25rem; /* 20px */
   display: block;
-  width: 200px;
+  width: 12.5rem; /* 200px */
   margin-left: auto;
   margin-right: auto;
 }
@@ -39,64 +39,70 @@ button:hover {
 /* Sección Productos */
 #products-section {
   background-color: #ffffff;
-  padding: 40px 20px;
+  padding: 2.5rem 1.25rem; /* 40px 20px */
 }
 
 #product-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(5, 1fr); /* 5 productos por fila en pantallas grandes */
+  gap: 1.25rem; /* 20px */
   justify-items: center;
+}
+
+@media (max-width: 1200px) {
+  #product-list {
+    grid-template-columns: repeat(4, 1fr); /* 4 productos por fila */
+  }
 }
 
 @media (max-width: 768px) {
   #product-list {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(2, 1fr); /* 2 productos por fila */
   }
 }
 
 @media (max-width: 480px) {
   #product-list {
-    grid-template-columns: 1fr;
-    padding: 0 10px; /* Añadir un poco de padding en pantallas pequeñas */
+    grid-template-columns: 1fr; /* 1 producto por fila */
+    padding: 0 0.625rem; /* 10px */
   }
 }
 
 .product-card {
   background-color: #ffffff;
   border: 1px solid #e1e1e1;
-  border-radius: 10px;
+  border-radius: 0.625rem; /* 10px */
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* 4px 8px */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: 100%;
-  max-width: 280px;
+  max-width: 17.5rem; /* 280px */
   display: flex;
   flex-direction: column;
 }
 
 .product-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-0.625rem); /* 10px */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); /* 8px 16px */
 }
 
 .product-image {
   width: 100%;
-  height: 200px;
+  height: 12.5rem; /* 200px */
   object-fit: cover; /* Llena el contenedor sin distorsión */
   background-color: #f0f0f0;
 }
 
 .product-details {
-  padding: 15px;
+  padding: 0.9375rem; /* 15px */
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px; /* Espaciado uniforme entre elementos */
+  gap: 0.625rem; /* 10px */
 }
 
 .product-title {
-  font-size: 1.2rem;
+  font-size: 1.2rem; /* 19px */
   font-weight: 600;
   color: #333;
   text-align: center;
@@ -104,7 +110,7 @@ button:hover {
 }
 
 .product-price {
-  font-size: 1.3rem;
+  font-size: 1.3rem; /* 20.8px */
   font-weight: 700;
   color: #1d3557;
   margin: 0;
@@ -123,23 +129,22 @@ button:hover {
   background-color: #f1faee;
   color: #333;
   font-weight: 500;
-  font-size: 1rem;
-  padding: 12px 24px;
-  border-radius: 5px;
+  font-size: 1rem; /* 16px */
+  padding: 0.75rem 1.5rem; /* 12px 24px */
+  border-radius: 0.3125rem; /* 5px */
   border: 1px solid #ccc;
   display: block;
-  width: 200px;
-  margin-top: 15px;
+  width: 12.5rem; /* 200px */
+  margin-top: 0.9375rem; /* 15px */
   margin-left: auto;
   margin-right: auto;
   cursor: pointer;
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-
 /* Asegura que las tarjetas se vean uniformes */
 #product-list {
-  gap: 30px; /* Más espacio entre productos */
+  gap: 1.875rem; /* 30px */
 }
 
 /* Carrusel modal */
@@ -151,26 +156,26 @@ button:hover {
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
-  font-size: 30px; /* Tamaño grande para las flechas */
-  width: 40px;  /* Tamaño de los botones */
-  height: 40px; /* Tamaño de los botones */
+  font-size: 1.875rem; /* 30px */
+  width: 2.5rem; /* 40px */
+  height: 2.5rem; /* 40px */
   text-align: center;
-  line-height: 20px; /* Centra el texto dentro del botón */
+  line-height: 1.25rem; /* 20px */
   cursor: pointer;
   z-index: 10;
   opacity: 0.7;
   transition: opacity 0.3s ease; /* Suavizado de la opacidad */
-  border-radius: 5px; /* Añadido border-radius para esquinas ligeramente redondeadas */
+  border-radius: 0.3125rem; /* 5px */
 }
 
 /* Alineación específica para la flecha izquierda */
 .prev-image-btn {
-  left: 10px; /* Alineado a la izquierda */
+  left: 0.625rem; /* 10px */
 }
 
 /* Alineación específica para la flecha derecha */
 .next-image-btn {
-  right: 10px; /* Alineado a la derecha */
+  right: 0.625rem; /* 10px */
 }
 
 /* No mover las flechas al pasar el ratón */
@@ -179,14 +184,3 @@ button:hover {
   background-color: rgba(0, 0, 0, 0.5); /* Mantener el fondo igual */
   transform: translateY(-50%); /* Aseguramos que la posición vertical se mantenga igual */
 }
-
-
-
-
-
-
-
-
-
-
-
