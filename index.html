@@ -45,21 +45,25 @@
   </div>
 </header>
 
-<!-- Carrito Modal -->
-<div id="cart-modal" class="modal">
-  <div class="modal-content">
-    <span class="close-btn" id="close-cart-btn" onclick="toggleCart()">&times;</span>
+<!-- Sección de Carrito (oculta inicialmente) -->
+<section id="cart-section" class="cart-section" style="display: none;">
+  <header class="cart-header">
     <h2>Tu Carrito</h2>
-    <div id="cart-items">
-      <!-- Los productos del carrito se cargarán aquí dinámicamente -->
-      <p>No hay productos en el carrito.</p>
-    </div>
-    <div class="cart-total">
-      <p>Total: <span id="cart-total">0</span> €</p>
-    </div>
-    <button id="checkout-btn" onclick="proceedToCheckout()">Proceder a la compra</button>
+    <!-- Botón de cierre del carrito -->
+    <button class="close-btn" onclick="toggleCart()">X</button>
+  </header>
+
+  <div id="cart-items" class="cart-items">
+    <!-- Los productos del carrito se agregarán aquí -->
   </div>
-</div>
+
+  <div class="cart-footer">
+    <p>Total: <span id="cart-total">0.00</span> €</p>
+    <button id="checkout-btn" class="checkout-btn" onclick="proceedToCheckout()">Proceder al Pago</button>
+  </div>
+</section>
+
+
 
 <!-- Modal de inicio de sesión o registro -->
 <div id="auth-modal" class="modal">

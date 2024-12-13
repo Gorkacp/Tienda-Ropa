@@ -1,49 +1,62 @@
-// Verificar si el carrito ya está definido globalmente
-if (typeof window.cart === 'undefined') {
-  window.cart = []; // Carrito de compras global
+// Función para mostrar y ocultar el carrito
+function toggleCart() {
+  const cartSection = document.getElementById('cart-section');
+  const cartBtn = document.getElementById('cart-btn');
+
+  // Alternar la visibilidad del carrito
+  if (cartSection.style.display === 'none') {
+      cartSection.style.display = 'block';
+      cartBtn.classList.add('active');
+  } else {
+      cartSection.style.display = 'none';
+      cartBtn.classList.remove('active');
+  }
 }
 
-// Función para agregar un producto al carrito
-function agregarAlCarrito(product) {
-  window.cart.push(product); // Usar cart global
-  alert(`${product.title} ha sido añadido a tu cesta.`);
-  console.log('Carrito:', window.cart);
-}
-
-// Función para mostrar el carrito en un modal o en otro lugar
-function mostrarCarrito() {
-  const cartModal = document.getElementById('cart-modal');
+// Función para actualizar el carrito
+function actualizarCarrito() {
   const cartItemsContainer = document.getElementById('cart-items');
   const cartTotal = document.getElementById('cart-total');
-
-  // Limpiar los productos en el carrito
-  cartItemsContainer.innerHTML = '';
+  cartItemsContainer.innerHTML = ''; // Limpiar el contenido actual del carrito
 
   let total = 0;
 
-  window.cart.forEach(product => {
-      const productItem = document.createElement('div');
-      productItem.classList.add('cart-item');
-      productItem.innerHTML = `
-          <p>${product.title}</p>
-          <p>${product.price} €</p>
+  // Recorrer los productos del carrito y mostrarlos
+  cart.forEach(product => {
+      const productDiv = document.createElement('div');
+      productDiv.classList.add('cart-item');
+      productDiv.innerHTML = `
+          <img src="${product.images[0]}" alt="${product.title}" class="cart-item-image">
+          <div class="cart-item-info">
+              <h3>${product.title}</h3>
+              <p><strong>${product.price} €</strong></p>
+          </div>
       `;
-      cartItemsContainer.appendChild(productItem);
+      cartItemsContainer.appendChild(productDiv);
       total += product.price;
   });
 
-  cartTotal.innerText = `Total: ${total} €`;
-
-  // Mostrar el modal del carrito
-  cartModal.style.display = 'block';
+  // Actualizar el total del carrito
+  cartTotal.textContent = total.toFixed(2);
 }
 
-// Función para cerrar el modal del carrito
-function cerrarCarrito() {
-  const cartModal = document.getElementById('cart-modal');
-  cartModal.style.display = 'none';
+// Función de ejemplo para proceder al pago (puedes modificarla según tus necesidades)
+function proceedToCheckout() {
+  alert('Procediendo al pago...');
 }
 
-// Event listener para cerrar el carrito
-const closeCartBtn = document.querySelector('.close-cart-btn');
-closeCartBtn.addEventListener('click', cerrarCarrito);
+// Event listener para el botón de añadir al carrito
+document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+  button.addEventListener('click', (event) => {
+      const product = event.target.closest('.product-card').product;
+      agregarAlCarrito(product);
+  });
+});
+
+// Agregar producto al carrito
+function agregarAlCarrito(product) {
+  cart.push(product);
+  alert(`${product.title} ha sido añadido a tu cesta.`);
+  actualizarCarrito(); // Actualizar la vista del carrito
+}
+

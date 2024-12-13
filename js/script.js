@@ -205,8 +205,8 @@ function mostrarModalProducto(product) {
 // Agregar el producto al carrito
 function agregarAlCarrito(product) {
     cart.push(product);
-    alert(`${product.title} ha sido añadido a tu cesta.`);
-    console.log('Carrito:', cart); 
+    alert(`${product.title} ha sido añadido a tu cesta.`); // Alerta de confirmación
+    console.log('Carrito:', cart); // Mostrar el carrito en la consola
 }
 
 window.addEventListener('scroll', () => {
@@ -240,7 +240,7 @@ document.querySelector('#inicio-btn').addEventListener('click', () => {
     history.pushState({}, 'Inicio', '/');
 
     const header = document.querySelector('.header');
-    if (header.classList.contains('open')) {
-        header.classList.remove('open');
+    if (header.classList.contains('show')) {
+        header.classList.remove('show');
     }
 });
