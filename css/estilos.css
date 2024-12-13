@@ -147,27 +147,34 @@ video {
 
 /* Sección Síguenos */
 .follow-us {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Usamos 'auto-fill' para que las columnas se ajusten a cualquier tamaño */
-  gap: 0.625rem; /* 10px */
-  align-items: center;
-  padding: 2.5rem; /* 40px */
+  display: flex; /* Usamos flexbox para organizar los elementos en fila */
+  align-items: center; /* Alineamos los elementos verticalmente en el centro */
+  justify-content: space-between; /* Espaciado entre el texto y la imagen */
+  padding: 2.5rem; /* 40px -> 2.5rem */
   background-image: linear-gradient(to right, var(--color-dark), #8a8787);
   color: var(--color-white);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); /* Agregar sombra al fondo */
-  border-radius: 0 !important; /* Eliminar bordes curvos, usando !important para asegurar que no se apliquen bordes redondeados */
+  border-radius: 0; /* Eliminar bordes curvos */
 }
 
-/* Cambiar el color de los textos en follow-text */
+.follow-text {
+  flex: 1; /* Ocupa todo el espacio disponible */
+  padding-right: 2rem; /* Espacio entre el texto y la imagen */
+}
+
 .follow-text p {
-  font-size: 1.5rem;
+  font-size: 1.5rem; /* 24px -> 1.5rem */
   color: var(--color-white); /* Asegurar que el texto sea blanco */
   text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.6); /* Añadir sombra al texto para mayor visibilidad */
 }
 
-/* Estilo para los íconos sociales */
+.social-icons {
+  display: flex;
+  gap: 1rem; /* 16px -> 1rem */
+}
+
 .social-icons a {
-  font-size: 2rem;
+  font-size: 2rem; /* 32px -> 2rem */
   color: var(--color-light);
   transition: transform 0.3s ease, color 0.3s ease;
   text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4); /* Sombra a los íconos para mayor visibilidad */
@@ -178,16 +185,27 @@ video {
   color: #4caf50;
 }
 
+/* Ajustar el tamaño de la imagen */
+.follow-image {
+  flex: 1; /* Ocupa el espacio restante */
+  text-align: center; /* Centra la imagen */
+}
+
+.follow-image img {
+  max-width: 100%; /* Hace que la imagen ocupe todo el ancho disponible sin exceder */
+  height: auto;
+}
+
 /* Media Query para pantallas pequeñas */
-@media (max-width: 768px) {
+@media (max-width: 48rem) { /* 768px -> 48rem */
   .follow-us {
-    grid-template-columns: 1fr; /* Colocar todo en una sola columna */
+    flex-direction: column; /* Coloca los elementos en columna en pantallas pequeñas */
     padding: 2rem 1rem; /* Ajustar el padding para pantallas pequeñas */
   }
 
   /* Ajustar el tamaño del texto para pantallas pequeñas */
   .follow-text p {
-    font-size: 1.25rem; /* Reducir tamaño de fuente */
+    font-size: 1.25rem; /* 20px -> 1.25rem */
   }
 
   /* Reducir el tamaño de la imagen en pantallas pequeñas */
@@ -197,19 +215,19 @@ video {
 }
 
 /* Para pantallas muy pequeñas, como móviles en vertical */
-@media (max-width: 480px) {
+@media (max-width: 30rem) { /* 480px -> 30rem */
   .follow-us {
     padding: 1.5rem; /* Reducir el padding para pantallas más pequeñas */
   }
 
   /* Ajustar el tamaño del texto aún más pequeño */
   .follow-text p {
-    font-size: 1rem; /* Reducir aún más el tamaño de fuente */
+    font-size: 1rem; /* 16px -> 1rem */
   }
 
   /* Ajustar el tamaño de los íconos en pantallas más pequeñas */
   .social-icons a {
-    font-size: 1.5rem; /* Reducir tamaño de íconos */
+    font-size: 1.5rem; /* 24px -> 1.5rem */
   }
 }
 
