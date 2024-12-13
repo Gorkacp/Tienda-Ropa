@@ -9,7 +9,7 @@
     position: relative;
 }
 
-/* Logo (visible en pantallas grandes) */
+/* Logo (visible en todos los formatos) */
 .header .logo {
     display: flex;
     align-items: center;
@@ -20,16 +20,12 @@
     font-weight: bold;
     margin: 0;
     color: white; /* Color del logo en blanco */
-  }
+    cursor: pointer; /* Indica que es clicable */
+}
 
-/* Menú hamburguesa (solo visible en pantallas pequeñas) */
-.hamburger {
-    display: none; /* Oculto en pantallas grandes */
-    cursor: pointer;
-    font-size: 30px;
-    color: var(--color-white);
-    z-index: 2;
-    transition: transform 0.3s ease-in-out;
+.logo a {
+    text-decoration: none;
+    color: inherit; /* Mantiene el color del logo */
 }
 
 /* Barra de navegación */
@@ -37,61 +33,6 @@
     list-style: none;
     margin: 0;
     padding: 0;
-}
-
-/* Menú principal (pantallas grandes) */
-.desktop-menu {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-
-.desktop-menu li a {
-    font-size: 18px;
-    color: var(--color-white);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.desktop-menu li a:hover {
-    color: #ffe6e0;
-}
-
-/* Menú móvil (solo visible cuando el menú hamburguesa está activo) */
-.mobile-menu {
-    display: none; /* Oculto por defecto */
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background-color: var(--color-primary);
-    padding: 10px 0;
-    z-index: 1;
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.mobile-menu li {
-    margin: 15px 0;
-    text-align: center;
-}
-
-.mobile-menu li a {
-    font-size: 18px;
-    color: var(--color-white);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-/* Mostrar el menú cuando se activa */
-.header.active .mobile-menu {
-    display: flex;
-    opacity: 1;
-    transform: translateY(0);
 }
 
 /* Íconos de carrito y cuenta */
@@ -103,7 +44,7 @@
     right: 30px; /* Ajusta la distancia desde el borde derecho */
     top: 50%; /* Centra verticalmente */
     transform: translateY(-50%); /* Alineación vertical */
-    z-index: 2; /* Asegura que los iconos estén por encima de otros elementos */
+    z-index: 2; /* Asegura que los íconos estén por encima de otros elementos */
 }
 
 .user-actions a {
@@ -123,7 +64,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 35px; /* Tamaño de los iconos */
+    width: 35px; /* Tamaño de los íconos */
     height: 35px;
     background-color: var(--color-primary-dark); /* Fondo oscuro para los íconos */
     border-radius: 50%; /* Redondear los íconos */
@@ -143,9 +84,9 @@
 
 /* Ajustar íconos en pantallas pequeñas */
 @media screen and (max-width: 768px) {
-    /* Ocultar logo en pantallas pequeñas */
+    /* Mostrar logo en pantallas pequeñas */
     .header .logo {
-        display: none;
+        display: flex;
     }
 
     /* Mostrar menú hamburguesa */
@@ -194,5 +135,29 @@
     /* Ocultar menú móvil en pantallas grandes */
     .mobile-menu {
         display: none;
+    }
+
+    /* Ajustar header en pantallas grandes */
+    .header {
+        padding: 25px 50px; /* Incrementa el padding */
+    }
+
+    .logo h1 {
+        font-size: 32px; /* Incrementa el tamaño del logo */
+    }
+
+    .user-actions a {
+        font-size: 28px; /* Incrementa el tamaño de los íconos */
+    }
+
+    .user-actions .cart,
+    .user-actions .account {
+        width: 45px; /* Tamaño mayor para los círculos */
+        height: 45px;
+    }
+
+    .user-actions .cart i,
+    .user-actions .account i {
+        font-size: 24px; /* Incrementa el tamaño de los íconos dentro del círculo */
     }
 }
