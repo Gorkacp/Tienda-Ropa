@@ -32,23 +32,23 @@
 }
 
 /* Estilo de la X para cerrar */
-.close-btn {
+.close-btnn {
     background-color: transparent;
     border: none;
     font-size: 24px;
     color: #333;
     cursor: pointer;
     position: absolute;
-    top: 20px;   /* Posición ajustada para la parte superior */
-    right: 20px; /* Posición ajustada para la parte derecha */
+    top: 0px;   /* Posición ajustada para la parte superior */
+    right: -175px; /* Posición ajustada para la parte derecha */
     outline: none; /* Eliminar el contorno de enfoque (azul) */
 }
 
-.close-btn:focus {
+.close-btnn:focus {
     outline: none; /* Asegurarse de que no haya contorno en el foco */
 }
 
-.close-btn:hover {
+.close-btnn:hover {
     background-color: transparent; /* Evitar el cambio de color de fondo en hover */
 }
 

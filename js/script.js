@@ -228,17 +228,23 @@ window.addEventListener('popstate', (event) => {
 });
 
 document.querySelector('#inicio-btn').addEventListener('click', () => {
+    // Mostrar las secciones necesarias
     document.querySelector('header').style.display = 'block';
     document.querySelector('footer').style.display = 'block';
     document.querySelector('.hero').style.display = 'block';
     document.querySelector('.categories').style.display = 'block';
+    document.querySelector('.follow-us').style.display = 'block';  // Asegurarse de que la sección "Síguenos" esté visible
 
+    // Limpiar el contenedor de productos
     document.querySelector('.product-container').innerHTML = '';
 
+    // Obtener categorías nuevamente
     obtenerCategorias();
 
+    // Actualizar la URL para reflejar el inicio
     history.pushState({}, 'Inicio', '/');
 
+    // Ocultar el menú si está visible
     const header = document.querySelector('.header');
     if (header.classList.contains('show')) {
         header.classList.remove('show');

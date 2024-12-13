@@ -22,7 +22,7 @@ function actualizarCarrito() {
   let total = 0;
 
   // Recorrer los productos del carrito y mostrarlos
-  cart.forEach(product => {
+  cart.forEach((product, index) => {
       const productDiv = document.createElement('div');
       productDiv.classList.add('cart-item');
       productDiv.innerHTML = `
@@ -30,6 +30,7 @@ function actualizarCarrito() {
           <div class="cart-item-info">
               <h3>${product.title}</h3>
               <p><strong>${product.price} €</strong></p>
+              <button class="remove-item-btn" data-index="${index}">Eliminar</button>
           </div>
       `;
       cartItemsContainer.appendChild(productDiv);
@@ -38,6 +39,14 @@ function actualizarCarrito() {
 
   // Actualizar el total del carrito
   cartTotal.textContent = total.toFixed(2);
+
+  // Añadir funcionalidad de eliminar producto
+  document.querySelectorAll('.remove-item-btn').forEach(button => {
+    button.addEventListener('click', (event) => {
+      const productIndex = event.target.getAttribute('data-index');
+      eliminarProducto(productIndex);
+    });
+  });
 }
 
 // Función de ejemplo para proceder al pago (puedes modificarla según tus necesidades)
@@ -56,7 +65,11 @@ document.querySelectorAll('.add-to-cart-btn').forEach(button => {
 // Agregar producto al carrito
 function agregarAlCarrito(product) {
   cart.push(product);
-  alert(`${product.title} ha sido añadido a tu cesta.`);
   actualizarCarrito(); // Actualizar la vista del carrito
 }
 
+// Función para eliminar un producto del carrito
+function eliminarProducto(index) {
+  cart.splice(index, 1); // Eliminar el producto en la posición 'index'
+  actualizarCarrito(); // Actualizar la vista del carrito
+}
