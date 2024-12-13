@@ -3,7 +3,7 @@ function sendEmailOnRegister(userEmail) {
     emailjs.send('service_vxn0mkm', 'template_kb1bz58', {
         to_email: userEmail,
         subject: 'Bienvenido a nuestra tienda',
-        message: 'Gracias por registrarte en nuestra tienda. ¡Disfruta de tus compras!',
+        message: 'Gracias por registrarte en GUSSI. ¡Disfruta de tus compras!',
     })
     .then(response => {
         console.log('Correo enviado: ', response);
