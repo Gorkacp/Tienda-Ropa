@@ -144,9 +144,8 @@ async function loadMoreProducts(categoryId) {
     }
 }
 
-// Mostrar el modal con la información del producto
 function mostrarModalProducto(product) {
-    console.log('Abriendo modal para el producto:', product.title); // Depuración
+    console.log('Abriendo modal para el producto:', product.title);
 
     const modal = document.createElement('div');
     modal.classList.add('modal');
@@ -154,9 +153,15 @@ function mostrarModalProducto(product) {
         <div class="modal-content">
             <span class="close-btn">&times;</span>
             <h2>${product.title}</h2>
-            <p><strong>Precio:</strong> ${product.price} €</p>
-            <img src="${product.images[0]}" alt="${product.title}" class="modal-product-image">
-            <p>${product.description}</p>
+            <p><strong>Precio:</strong> <span style="font-size: 1.5em; font-weight: bold; color: #FF5733;">${product.price} €</span></p>
+            <div class="image-carousel">
+                ${product.images.map((image, index) => `
+                    <img src="${image}" alt="Imagen ${index + 1}" class="carousel-image" style="display: ${index === 0 ? 'block' : 'none'};">
+                `).join('')}
+                <button class="prev-image-btn">&#10094;</button>
+                <button class="next-image-btn">&#10095;</button>
+            </div>
+            <p class="modal-description">${product.description}</p>
             <button class="add-to-cart-btn">Añadir a la cesta</button>
         </div>
     `;
@@ -170,7 +175,7 @@ function mostrarModalProducto(product) {
     modalContent.style.padding = '20px';
     modalContent.style.borderRadius = '8px';
     modalContent.style.boxShadow = '0px 0px 10px rgba(0, 0, 0, 0.1)';
-    
+
     // Fondo oscuro detrás del modal
     modal.style.position = 'fixed';
     modal.style.top = '0';
@@ -181,7 +186,30 @@ function mostrarModalProducto(product) {
     modal.style.display = 'flex';
     modal.style.justifyContent = 'center';
     modal.style.alignItems = 'center';
-    
+
+    // Configurar el carrusel
+    const images = modal.querySelectorAll('.carousel-image');
+    let currentIndex = 0;
+
+    function showImage(index) {
+        images.forEach((img, i) => {
+            img.style.display = i === index ? 'block' : 'none';
+        });
+    }
+
+    const prevImageBtn = modal.querySelector('.prev-image-btn');
+    const nextImageBtn = modal.querySelector('.next-image-btn');
+
+    prevImageBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex);
+    });
+
+    nextImageBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+    });
+
     // Cerrar el modal al hacer clic en la 'X'
     const closeBtn = modal.querySelector('.close-btn');
     closeBtn.addEventListener('click', () => {
@@ -195,18 +223,19 @@ function mostrarModalProducto(product) {
         modal.remove(); // Cerrar el modal al añadir el producto
     });
 
-    // Estilo para la imagen en el modal para que se ajuste adecuadamente
-    const modalImage = modal.querySelector('.modal-product-image');
-    modalImage.style.maxWidth = '100%'; // Limitar el tamaño máximo de la imagen
-    modalImage.style.height = 'auto'; // Mantener la proporción de la imagen
-    modalImage.style.objectFit = 'contain'; // Asegurar que la imagen no se distorsione
+    // Estilo para las imágenes en el carrusel
+    images.forEach(image => {
+        image.style.maxWidth = '100%';
+        image.style.height = 'auto';
+        image.style.objectFit = 'contain';
+    });
 }
+
+
 
 // Agregar el producto al carrito
 function agregarAlCarrito(product) {
     cart.push(product);
-    alert(`${product.title} ha sido añadido a tu cesta.`); // Alerta de confirmación
-    console.log('Carrito:', cart); // Mostrar el carrito en la consola
 }
 
 window.addEventListener('scroll', () => {

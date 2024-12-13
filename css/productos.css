@@ -110,7 +110,7 @@ button:hover {
 }
 
 .product-card:hover .product-title {
-  color: #457b9d;
+  color: #636769;
 }
 
 .product-card:hover .product-price {
@@ -144,3 +144,51 @@ button:hover {
 #product-list {
   gap: 30px; /* Más espacio entre productos */
 }
+
+/*Carrusel modal*/
+/* Estilos para las flechas del carrusel */
+.prev-image-btn, .next-image-btn {
+  position: absolute;
+  top: 42%;
+  transform: translateY(-50%); /* Esto centra verticalmente las flechas */
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 30px; /* Tamaño grande para las flechas */
+  width: 50px;  /* Tamaño de los botones */
+  height: 50px; /* Tamaño de los botones */
+  text-align: center;
+  line-height: 35px; /* Centra el texto dentro del botón */
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+  opacity: 0.7;
+  transition: opacity 0.3s ease; /* Suavizado de la opacidad */
+}
+
+/* Alineación específica para la flecha izquierda */
+.prev-image-btn {
+  left: 10px; /* Alineado a la izquierda */
+}
+
+/* Alineación específica para la flecha derecha */
+.next-image-btn {
+  right: 10px; /* Alineado a la derecha */
+}
+
+/* No mover las flechas al pasar el ratón */
+.prev-image-btn:hover, .next-image-btn:hover {
+  opacity: 1; /* Solo cambiar la opacidad al pasar el ratón */
+  background-color: rgba(0, 0, 0, 0.5); /* Mantener el fondo igual */
+  transform: translateY(-50%); /* Aseguramos que la posición vertical se mantenga igual */
+}
+
+
+
+
+
+
+
+
+
+
